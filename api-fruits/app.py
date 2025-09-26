@@ -7,7 +7,7 @@ app = Flask(__name__)
 class MongoAPI:
     def __init__(self, data):
         log.basicConfig(level=log.DEBUG, format='%(asctime)s %(levelname)s:\n%(message)s\n')
-        self.client = MongoClient("mongodb://172.31.44.64:27017") # IP privada de MV Base de Datos
+        self.client = MongoClient("mongodb://172.31.16.56:27017") # IP privada de MV Base de Datos
         database = data['database']
         collection = data['collection']
         cursor = self.client[database]
@@ -104,3 +104,4 @@ def mongo_delete():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8001, debug=False)
+
